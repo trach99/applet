@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="doctg.xsl" ?>
+<testprocedure 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.openscdp.org/schema/testframework-1.0.xsd"
+	id="tp_001_sample1" arrayElement="teststep" arrayIndex="id">
+	<name>A sample to show how to write test procedure</name>
+	<description>
+		<p></p>
+	</description>
+	<reference>
+		<p></p>
+	</reference>
+
+
+	
+	<teststep id="010_ResetCard">
+		<name>ResetCard</name>
+		<description>
+			<p>This step will reset the card</p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<Script><![CDATA[
+
+		print("// Reset card");
+		var card = this.parameter.card;	
+		
+		card.reset(Card.RESET_COLD);
+		]]></Script>
+	</teststep>
+	
+
+
+
+<!-- Each test case must be declared with an id that starts with a 3 digit number -->
+	<teststep id="020_SendTerminalProfile">
+		<name>Send Terminal Profile</name>
+		<description>
+			<p></p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<Script><![CDATA[
+			var card = this.parameter.card;
+			print("// Terminal Profile");
+			var tp_str = "FF FF FF FF FF FF FF FF";
+			var terminalProfile = new ByteString(tp_str,HEX);
+		    var resp = card.lsc_sendApdu(0xA0,0x10,0x00,0x00,terminalProfile);
+		    
+		    assert(card.SW1 == 0x91 ||card.SW1 == 0x61);
+		    
+		    
+		]]></Script>
+	</teststep>
+	
+	
+	<teststep id="030_GetResponse">
+		<name>Get Response</name>
+		<description>
+			<p></p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<Script><![CDATA[
+			var card = this.parameter.card;
+			print("// Fetch");
+		    var resp = card.lsc_sendApdu(0xA0,0x12,0x00,0x00,card.SW2);
+		    
+		    assert(card.SW == 0x9000);
+		]]></Script>
+	</teststep>
+	
+	
+	
+	
+	
+</testprocedure>

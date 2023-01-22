@@ -1,0 +1,98 @@
+<project name="logger"  default="converter">
+	<property file="build.properties" />
+	<import file="build_common.xml" />
+	<target name="displayproperties">
+		<!--
+		<echoproperties destfile="build.properties"/>
+		-->
+		<echo message="srcFolder">${srcFolder}</echo>
+	</target>
+
+
+	<!-- ================================= 
+          target: testprepocessor               
+         ================================= -->
+    <target 
+    	name="testprepocessor" 
+    	depends="" 
+    	description="test the prebop processor"
+    	if="${preprocess}">
+    	<echo message="Eclips home">${eclipse.home}</echo>
+    	<taskdef
+    			name="preprocess"
+    			classname="com.objfac.prebop.ant.PreprocessorTask"
+    			classpath="${prebop.classpath}"    			
+    			>	
+    	</taskdef>    	
+    	
+    	<preprocess 
+    		indir="${srcFolder}" 
+    		outdir="${versionFolder}" 
+    		out="replace" 
+    		except="${skip}">
+				<var name="version" value="${version.value}"/>
+				<filetype commentend="*/" commentbegin="/*" extensions="java"/>
+    	</preprocess>
+    </target>
+
+	
+	
+	<!-- ================================= 
+          target: insertlogger              
+         ================================= -->
+    <target name="insertlogger" depends="testprepocessor,initLoggerFld" description="add logger feature to source code">
+    	
+    	
+    	
+    	<addDebugger  	
+		  	inDir="${logFolder}"
+		  	xmlFile="${basedir}/xmlFiles/test.xml"
+		  	loggerSourceFile="${logger.source.file}"
+		  />
+    	
+    	
+    	
+    </target>
+    
+   
+	<!-- ================================= 
+          target: compile              
+         ================================= -->
+    <target name="compile" depends="insertlogger" description="compile the java code">
+        <delete dir="${target.classes}"></delete>
+        <mkdir dir="${target.classes}"></mkdir>
+        
+        <javac 
+        	debug="yes"
+        	optimize="no"
+        	executable="${java.bin}/javac"
+        	includeAntRuntime="yes"
+        	fork="true"
+        	srcdir="${logFolder}" 
+        	destdir="${target.classes}"
+        	source="1.3"
+        	target="1.1"
+        	>
+        	<classpath refid="jc_jars"/>
+        </javac>
+    </target>
+	
+	
+	<!-- ================================= 
+          target: converter              
+         ================================= -->
+    <target name="converter" depends="compile" description="convert and generate apdu script">
+        <exec 
+        	dir="${basedir}"
+        	executable="cmd">
+        	
+        	<arg value="/c"/>
+        	<arg value="${basedir}/ProcessClass.bat"/>
+        </exec>
+    </target>
+
+
+	
+	
+
+</project>

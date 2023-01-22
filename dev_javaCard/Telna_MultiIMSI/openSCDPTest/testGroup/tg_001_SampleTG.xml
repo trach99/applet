@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="doctp.xsl" ?>
+<testgroup 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.openscdp.org/schema/testframework-1.0.xsd"
+	id="tg_001_SampleTG" arrayElement="testcase" arrayIndex="id,Name">
+	<name>A sample Test Group</name>
+	<description>
+		<p></p>
+	</description>
+	<reference>
+		<p>No reference defined.</p>
+	</reference>
+
+
+	
+<!-- Setup method called before the test procedure is executed -->
+	<setup>
+		<Script><![CDATA[
+
+	//print("// setup() called.");			
+	
+		]]></Script>
+	</setup>
+
+
+	
+<!-- Teardown method called after the test procedure is executed -->
+	<teardown>
+		<Script><![CDATA[
+		
+	//print("teardown() called.");			
+
+		]]></Script>
+	</teardown>
+<testcase id="000_ResetCardAndGetEepromSize">
+		<name>Reset card and get eeprom size</name>
+		<description>
+			<p></p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<procedures arrayElement="procedure" arrayIndex="#">
+			<procedure id="tp_000_sample0"/>
+		</procedures>
+		
+		<Script><![CDATA[	
+			
+			var result = this.runTestProcedure("tp_000_sample0", this.parameter);	
+			
+		]]></Script>
+	</testcase>
+	
+	
+	<testcase id="001_TerminalProfile">
+		<name>TerminalProfile</name>
+		<description>
+			<p></p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p></p>
+		</reference>
+		<procedures arrayElement="procedure" arrayIndex="#">
+			<procedure id="tp_001_sample1"/>
+		</procedures>
+		
+		<Script><![CDATA[	
+			var result = this.runTestProcedure("tp_001_sample1", this.parameter);				
+		]]></Script>
+	</testcase>
+
+	
+</testgroup>

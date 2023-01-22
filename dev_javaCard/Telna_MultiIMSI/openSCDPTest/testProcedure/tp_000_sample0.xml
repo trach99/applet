@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="doctg.xsl" ?>
+<testprocedure 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.openscdp.org/schema/testframework-1.0.xsd"
+	id="tp_000_sample0" arrayElement="teststep" arrayIndex="id">
+	<name>A sample to show how to write test procedure</name>
+	<description>
+		<p></p>
+	</description>
+	<reference>
+		<p></p>
+	</reference>
+
+
+	
+	<teststep id="010_ResetCard">
+		<name>ResetCard</name>
+		<description>
+			<p>This step will reset the card</p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<Script><![CDATA[
+
+		print("// Reset card");
+		var card = this.parameter.card;	
+		
+		card.reset(Card.RESET_COLD);
+		]]></Script>
+	</teststep>
+	
+
+
+
+<!-- Each test case must be declared with an id that starts with a 3 digit number -->
+	<teststep id="020_GetFreeEeprom">
+		<name>Get free eeprom</name>
+		<description>
+			<p></p>
+		</description>
+		<requirement>
+			<p>...</p>
+		</requirement>
+		<reference>
+			<p>...</p>
+		</reference>
+		<Script><![CDATA[
+			var card = this.parameter.card;
+			print("// Get Eeprom size");
+		    var resp = card.lsc_sendApdu(0x80,0xCA,0xA0,0xC8,0x07);
+		    var len = resp.byteAt(3);
+		    var size = resp.bytes(4,len).toUnsigned();
+		    print("// Free Eeprom size: "+size +" bytes");
+		]]></Script>
+	</teststep>
+	
+	
+</testprocedure>

@@ -1,0 +1,4159 @@
+// converted by version 1.3
+// on Fri Apr 29 10:34:43 GST 2022
+
+.package INWI_STK {
+	.aid 0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0x0:0x0:0x0:0x0:0x89:0x5A:0x51:0x53:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x12:0x0:0x0:0x0 1.0;		//uicc/toolkit
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0x0:0x0:0x0:0x0:0x89:0x5A:0x51:0x1:0x0 INWI_STK;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte INWI_STK/DCS_8_BIT_DATA;
+		// 1
+		instanceFieldRef 1.9 INWI_STK/reg;
+		// 2
+		staticFieldRef byte[] INWI_STK/menuIndex;
+		// 3
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 4
+		staticFieldRef byte[] INWI_STK/tempArray;
+		// 5
+		staticFieldRef byte[] INWI_STK/tmpDataArray;
+		// 6
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 7
+		virtualMethodRef 0.3.2([BSB)V;		// register([BSB)V
+		// 8
+		virtualMethodRef INWI_STK/initToolkit()V;
+		// 9
+		staticMethodRef 1.16.0()Luicc/toolkit/ToolkitRegistry;;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+			.descriptor	Luicc/toolkit/ToolkitRegistry;	1.9;
+
+		// 10
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 11
+		staticFieldRef byte[] ItemText/mainMenuText;
+		// 12
+		classRef 1.9;		// uicc/toolkit/ToolkitRegistry
+		// 13
+		classRef INWI_STK;
+		// 14
+		staticMethodRef INWI_STK/<init>([BSB)V;
+		// 15
+		staticFieldRef byte[] ItemText/serviceMobile;
+		// 16
+		staticMethodRef INWI_STK/generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 17
+		staticMethodRef INWI_STK/sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 18
+		classRef 1.5;		// uicc/toolkit/ProactiveHandler
+		// 19
+		staticMethodRef 1.17.0()Luicc/toolkit/ProactiveResponseHandler;;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+			.descriptor	Luicc/toolkit/ProactiveResponseHandler;	1.6;
+
+		// 20
+		classRef 1.0;		// uicc/toolkit/ViewHandler
+		// 21
+		staticMethodRef INWI_STK/ImeiParsing([BB[BBB)V;
+		// 22
+		staticFieldRef byte[] ItemText/smsNumbers;
+		// 23
+		staticMethodRef INWI_STK/sendSMSArray([BSB[BSSLuicc/toolkit/ProactiveHandler;)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 24
+		staticFieldRef byte[] ItemText/infosText;
+		// 25
+		staticFieldRef byte[] ItemText/actualiteText;
+		// 26
+		staticMethodRef INWI_STK/sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 27
+		staticFieldRef byte[] ItemText/sportsText;
+		// 28
+		staticMethodRef INWI_STK/sendDisplayText(Luicc/toolkit/ProactiveHandler;)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 29
+		staticMethodRef INWI_STK/sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 30
+		staticMethodRef INWI_STK/secondItemHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 31
+		staticMethodRef INWI_STK/secondItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 32
+		staticMethodRef INWI_STK/thirdMenuHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 33
+		staticMethodRef INWI_STK/thirdItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 34
+		staticMethodRef INWI_STK/trainItemHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 35
+		staticMethodRef INWI_STK/pharmaciesItemHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 36
+		staticMethodRef INWI_STK/meteoMenuHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 37
+		staticMethodRef INWI_STK/secondItemFootballHandling(Luicc/toolkit/ProactiveHandler;B)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 38
+		staticFieldRef byte[] ItemText/footballText;
+		// 39
+		staticFieldRef byte[] ItemText/resultsText;
+		// 40
+		staticFieldRef byte[] ItemText/horoscopeText;
+		// 41
+		staticFieldRef byte[] ItemText/divertissementText;
+		// 42
+		staticFieldRef byte[] ItemText/belierText;
+		// 43
+		staticFieldRef byte[] ItemText/programmText;
+		// 44
+		staticFieldRef byte[] ItemText/citationText;
+		// 45
+		staticFieldRef byte[] ItemText/meteoText;
+		// 46
+		staticFieldRef byte[] ItemText/pratiqueText;
+		// 47
+		staticMethodRef INWI_STK/forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 48
+		staticFieldRef byte[] ItemText/agadirText;
+		// 49
+		staticFieldRef byte[] ItemText/pharmaciesText;
+		// 50
+		staticFieldRef byte[] ItemText/casablancaText;
+		// 51
+		staticFieldRef byte[] ItemText/rabatText;
+		// 52
+		staticFieldRef byte[] ItemText/trainsText;
+		// 53
+		staticFieldRef byte[] ItemText/alphaIds;
+		// 54
+		staticFieldRef byte[] ItemText/casaPortText;
+		// 55
+		staticFieldRef byte[] ItemText/tangerCasaport;
+		// 56
+		staticFieldRef byte[] ItemText/newsMessage;
+		// 57
+		staticMethodRef 1.12.0()Luicc/toolkit/EnvelopeHandler;;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+			.descriptor	Luicc/toolkit/EnvelopeHandler;	1.3;
+
+		// 58
+		staticMethodRef 1.14.0()Luicc/toolkit/ProactiveHandler;;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 59
+		classRef 1.3;		// uicc/toolkit/EnvelopeHandler
+		// 60
+		staticMethodRef INWI_STK/firstMenuItem(Luicc/toolkit/ProactiveHandler;)V;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 61
+		staticFieldRef byte[] INWI_STK/dtItemText;
+		// 62
+		classRef 1.2;		// uicc/toolkit/EditHandler
+		// 63
+		staticFieldRef byte[] INWI_STK/confirmDt;
+		// 64
+		staticFieldRef byte INWI_STK/generalResult;
+		// 65
+		staticMethodRef 0.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 66
+		classRef 1.6;		// uicc/toolkit/ProactiveResponseHandler
+		// 67
+		staticMethodRef 2.0.0()V;		// java/lang/Object.<init>()V
+	}
+
+	.class public INWI_STK 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 1.9 reg 0;		// Luicc/toolkit/ToolkitRegistry;
+			final byte DCS_8_BIT_DATA 1;		// B
+			public static final byte PRO_CMD_SEND_SHORT_MESSAGE = 19;		// B
+			public static final byte TAG_SMS_TPDU = 11;		// B
+			public static byte[] dtItemText 0 = {0,80,0,111,0,117,0,114,0,32,0,97,0,99,0,99,0,-23,0,100,0,101,0,114,0,32,0,-32,0,32,0,110,0,111,0,116,0,114,0,101,0,32,0,99,0,97,0,116,0,97,0,108,0,111,0,103,0,117,0,101,0,32,0,100,0,101,0,32,0,115,0,101,0,114,0,118,0,105,0,99,0,101,0,115,0,32,0,97,0,112,0,112,0,101,0,108,0,101,0,122,0,32,0,108,0,101,0,32,0,42,0,49,0,50,0,48,0,42,0,49,0,49,0,35};		// [B
+			private static final byte PRO_CMD_SEND_USSD = 18;		// B
+			private static final byte TAG_USSD_STRING = 10;		// B
+			private static byte generalResult;		// B
+			private static byte[] tempArray;		// [B
+			private static byte[] tmpDataArray;		// [B
+			private static byte[] confirmDt = {67,111,110,102,105,114,109,101,114,32,63};		// [B
+			private static byte[] menuIndex;		// [B
+		}
+
+		.publicMethodTable 5 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			initToolkit()V;
+			processToolkit(S)V;
+			uninstall()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.7 { 		// uicc/toolkit/ToolkitConstants
+			}
+
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.8 { 		// uicc/toolkit/ToolkitInterface
+				9;		// processToolkit(S)V
+			}
+
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 10;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sconst_4;
+					putfield_b 0;		// byte INWI_STK/INWI_STK.DCS_8_BIT_DATA
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+					bspush 6;
+					newarray 11;
+					putstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					bspush 50;
+					sconst_1;
+					invokestatic 3;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					bspush 25;
+					sconst_1;
+					invokestatic 3;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sload 4;
+					ifne L2;
+				L1:	aload_0;
+					invokevirtual 6;		// register()V
+					goto L3;
+				L2:	aload_0;
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					aload_1;
+					sload_2;
+					baload;
+					invokevirtual 7;		// register([BSB)V
+					aload_0;
+					invokevirtual 8;		// initToolkit()V
+				L3:	return;
+		}
+
+		.method public initToolkit()V 8 {
+			.stack 10;
+			.locals 2;
+
+				L0:	aload_0;
+					invokestatic 9;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+					putfield_a 1;		// reference INWI_STK/INWI_STK.reg
+					sconst_1;
+					sstore_1;
+					sconst_0;
+					sstore_2;
+					goto L2;
+				L1:	getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sload_2;
+					getfield_a_this 1;		// reference INWI_STK/INWI_STK.reg
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					sload_1;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					sload_1;
+					sconst_1;
+					ssub;
+					baload;
+					sspush 255;
+					sand;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					invokeinterface 8 12 6;		// uicc/toolkit/ToolkitRegistry
+					bastore;
+					sload_1;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					sload_1;
+					sconst_1;
+					ssub;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_1;
+					sinc 2 1;
+				L2:	sload_2;
+					sconst_5;
+					if_scmple L1;
+				L3:	return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 4;
+			.locals 0;
+
+				L0:	new 13;		// INWI_STK/INWI_STK
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 14;		// INWI_STK/INWI_STK.<init>([BSB)V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+		.method private static firstMenuItem(Luicc/toolkit/ProactiveHandler;)V {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					sconst_4;
+					getstatic_a 15;		// reference INWI_STK/ItemText.serviceMobile
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L5 1 4 L1 L2 L3 L4;
+				L1:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					bspush 6;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					bspush -111;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					bspush 18;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush 82;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_4;
+					bspush -110;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_5;
+					sconst_0;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					bspush 6;
+					bspush 16;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					bspush 7;
+					bspush 50;
+					bastore;
+					aload_0;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					baload;
+					invokestatic 17;		// INWI_STK/INWI_STK.sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V
+					goto_w L5;
+				L2:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sconst_2;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					bspush -127;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					bspush 7;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush -16;
+					bastore;
+					aload_0;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					baload;
+					invokestatic 17;		// INWI_STK/INWI_STK.sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V
+					goto_w L5;
+				L3:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sconst_2;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					bspush -127;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					bspush -121;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush -7;
+					bastore;
+					aload_0;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					baload;
+					invokestatic 17;		// INWI_STK/INWI_STK.sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V
+					goto L5;
+				L4:	aload_0;
+					bspush 38;
+					sconst_1;
+					bspush -125;
+					invokeinterface 4 18 23;		// uicc/toolkit/ProactiveHandler
+					aload_0;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					invokestatic 19;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+					astore_1;
+					aload_1;
+					bspush 20;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_5;
+					invokeinterface 4 20 8;		// uicc/toolkit/ViewHandler
+					sstore_2;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_5;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_5;
+					bspush 8;
+					invokestatic 21;		// INWI_STK/INWI_STK.ImeiParsing([BB[BBB)V
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_0;
+					bspush 73;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_1;
+					bspush 78;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_2;
+					bspush 87;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_3;
+					bspush 73;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_4;
+					bspush 32;
+					bastore;
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					bspush 6;
+					sconst_2;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_0;
+					sload_2;
+					bspush 7;
+					sadd;
+					aload_0;
+					invokestatic 23;		// INWI_STK/INWI_STK.sendSMSArray([BSB[BSSLuicc/toolkit/ProactiveHandler;)V
+				L5:	return;
+		}
+
+		.method public static ImeiParsing([BB[BBB)V 1 {
+			.stack 5;
+			.locals 1;
+
+				L0:	aload_2;
+					sload_3;
+					dup;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+					bspush 48;
+					aload_0;
+					sload_1;
+					baload;
+					sspush 240;
+					sand;
+					sconst_4;
+					sshr;
+					sor;
+					s2b;
+					bastore;
+					sload_1;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 5;
+					goto L2;
+				L1:	aload_2;
+					sload_3;
+					dup;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+					bspush 48;
+					aload_0;
+					sload 5;
+					baload;
+					sspush 240;
+					sand;
+					sconst_4;
+					sshr;
+					sor;
+					s2b;
+					bastore;
+					aload_2;
+					sload_3;
+					dup;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+					bspush 48;
+					aload_0;
+					sload 5;
+					baload;
+					bspush 15;
+					sand;
+					sor;
+					bastore;
+					sload 5;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 5;
+				L2:	sload 5;
+					sload_1;
+					sload 4;
+					sadd;
+					s2b;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method private static secondItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sconst_0;
+					sstore_2;
+					sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					sconst_3;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_3;
+					sload_3;
+					stableswitch L18 0 3 L4 L5 L10 L15;
+				L4:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					sconst_1;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L18;
+				L5:	aload_0;
+					sconst_2;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L7;
+				L6:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sconst_0;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L18;
+				L7:	sload_2;
+					ifne L9;
+				L8:	aload_0;
+					sconst_3;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					sconst_2;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L18;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sconst_0;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L18;
+				L10:	aload_0;
+					sconst_2;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					bspush 6;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L12;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					bspush 9;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L18;
+				L12:	sload_2;
+					ifne L14;
+				L13:	aload_0;
+					sconst_3;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					sconst_2;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L18;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 9;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L18;
+				L15:	aload_0;
+					sconst_1;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					bspush 20;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L17;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_4;
+					sconst_2;
+					sconst_0;
+					sconst_4;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L18;
+				L17:	aload_0;
+					sconst_3;
+					getstatic_a 24;		// reference INWI_STK/ItemText.infosText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					sconst_2;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+				L18:	return;
+		}
+
+		.method private static sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V {
+			.stack 6;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					sload_1;
+					aload_2;
+					sload_3;
+					aload 4;
+					sload 5;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore 7;
+					sload 7;
+					ifne L2;
+				L1:	sconst_0;
+					sstore 7;
+				L2:	sload 6;
+					stableswitch L11 1 8 L3 L4 L5 L6 L7 L8 L9 L10;
+				L3:	aload_0;
+					sload 7;
+					invokestatic 30;		// INWI_STK/INWI_STK.secondItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L4:	aload_0;
+					sload 7;
+					invokestatic 31;		// INWI_STK/INWI_STK.secondItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L5:	aload_0;
+					sload 7;
+					invokestatic 32;		// INWI_STK/INWI_STK.thirdMenuHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L6:	aload_0;
+					sload 7;
+					invokestatic 33;		// INWI_STK/INWI_STK.thirdItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L7:	aload_0;
+					sload 7;
+					invokestatic 34;		// INWI_STK/INWI_STK.trainItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L8:	aload_0;
+					sload 7;
+					invokestatic 35;		// INWI_STK/INWI_STK.pharmaciesItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L9:	aload_0;
+					sload 7;
+					invokestatic 36;		// INWI_STK/INWI_STK.meteoMenuHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L11;
+				L10:	aload_0;
+					sload 7;
+					invokestatic 37;		// INWI_STK/INWI_STK.secondItemFootballHandling(Luicc/toolkit/ProactiveHandler;B)V
+				L11:	return;
+		}
+
+		.method private static secondItemFootballHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					sconst_3;
+					getstatic_a 38;		// reference INWI_STK/ItemText.footballText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 12;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_2;
+					sload_2;
+					stableswitch L24 0 3 L4 L5 L14 L23;
+				L4:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					sconst_1;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L24;
+				L5:	aload_0;
+					bspush 6;
+					getstatic_a 39;		// reference INWI_STK/ItemText.resultsText
+					sconst_0;
+					getstatic_a 38;		// reference INWI_STK/ItemText.footballText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L13 0 6 L6 L7 L8 L9 L10 L11 L12;
+				L6:	aload_0;
+					sconst_3;
+					getstatic_a 38;		// reference INWI_STK/ItemText.footballText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 12;
+					bspush 8;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L24;
+				L7:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 23;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L24;
+				L8:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 30;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L24;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 37;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L24;
+				L10:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 43;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L24;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 49;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L24;
+				L12:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 54;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L13:	goto_w L24;
+				L14:	aload_0;
+					bspush 6;
+					getstatic_a 39;		// reference INWI_STK/ItemText.resultsText
+					sconst_0;
+					getstatic_a 38;		// reference INWI_STK/ItemText.footballText
+					bspush 20;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L22 0 6 L15 L16 L17 L18 L19 L20 L21;
+				L15:	aload_0;
+					sconst_3;
+					getstatic_a 38;		// reference INWI_STK/ItemText.footballText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 12;
+					bspush 8;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L24;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 59;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L24;
+				L17:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 68;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L24;
+				L18:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 77;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L24;
+				L19:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 85;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L24;
+				L20:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 93;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L24;
+				L21:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 100;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L22:	goto L24;
+				L23:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_4;
+					sconst_2;
+					bspush 107;
+					sconst_4;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L24:	return;
+		}
+
+		.method private static secondItemHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_2;
+					sload_2;
+					stableswitch L19 1 5 L4 L5 L10 L11 L15;
+				L4:	aload_0;
+					bspush 80;
+					invokestatic 31;		// INWI_STK/INWI_STK.secondItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto_w L19;
+				L5:	aload_0;
+					sconst_2;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 6;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L9 0 2 L6 L7 L8;
+				L6:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					sconst_1;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L19;
+				L7:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					bspush 18;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L19;
+				L8:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 18;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L9:	goto_w L19;
+				L10:	aload_0;
+					bspush 80;
+					invokestatic 37;		// INWI_STK/INWI_STK.secondItemFootballHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto_w L19;
+				L11:	aload_0;
+					sconst_1;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 21;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L14 0 1 L12 L13;
+				L12:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					sconst_1;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L19;
+				L13:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_4;
+					sconst_2;
+					bspush 111;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L14:	goto L19;
+				L15:	aload_0;
+					sconst_2;
+					getstatic_a 27;		// reference INWI_STK/ItemText.sportsText
+					sconst_0;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					bspush 29;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L19 0 2 L16 L17 L18;
+				L16:	aload_0;
+					sconst_5;
+					getstatic_a 25;		// reference INWI_STK/ItemText.actualiteText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 17;
+					sconst_1;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L19;
+				L17:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					bspush 116;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L19;
+				L18:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 116;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L19:	return;
+		}
+
+		.method private static thirdItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sconst_0;
+					sstore_2;
+					sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_3;
+					sload_3;
+					stableswitch L65 0 12 L4 L5 L10 L15 L20 L25 L30 L35 L40 L45 L50 L55 L60;
+				L4:	aload_0;
+					bspush 80;
+					invokestatic 32;		// INWI_STK/INWI_STK.thirdMenuHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto_w L65;
+				L5:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L7;
+				L6:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					bspush 122;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L7:	sload_2;
+					ifne L9;
+				L8:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					bspush 122;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L10:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 14;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L12;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 128;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L12:	sload_2;
+					ifne L14;
+				L13:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 128;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L15:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 22;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L17;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 135;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L17:	sload_2;
+					ifne L19;
+				L18:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L19:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 135;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L20:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 38;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L22;
+				L21:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 142;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L22:	sload_2;
+					ifne L24;
+				L23:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L24:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 142;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L25:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 45;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L27;
+				L26:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 148;
+					sconst_4;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L27:	sload_2;
+					ifne L29;
+				L28:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L29:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 148;
+					sconst_4;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L30:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 50;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L32;
+				L31:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 152;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L32:	sload_2;
+					ifne L34;
+				L33:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L34:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 152;
+					bspush 6;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L35:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 57;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L37;
+				L36:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 158;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L37:	sload_2;
+					ifne L39;
+				L38:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L39:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 158;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L40:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 65;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L42;
+				L41:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 165;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L42:	sload_2;
+					ifne L44;
+				L43:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L44:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 165;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L45:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 74;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L47;
+				L46:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 173;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L47:	sload_2;
+					ifne L49;
+				L48:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L49:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 173;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L50:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 85;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L52;
+				L51:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 183;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L52:	sload_2;
+					ifne L54;
+				L53:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L65;
+				L54:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 183;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L65;
+				L55:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 96;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L57;
+				L56:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 193;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L65;
+				L57:	sload_2;
+					ifne L59;
+				L58:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L65;
+				L59:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 193;
+					bspush 7;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L65;
+				L60:	aload_0;
+					sconst_2;
+					getstatic_a 42;		// reference INWI_STK/ItemText.belierText
+					sconst_0;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					bspush 104;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L62;
+				L61:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 200;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L65;
+				L62:	sload_2;
+					ifne L64;
+				L63:	aload_0;
+					bspush 12;
+					getstatic_a 40;		// reference INWI_STK/ItemText.horoscopeText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 32;
+					sconst_4;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L65;
+				L64:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 200;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L65:	return;
+		}
+
+		.method private static thirdMenuHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					sconst_3;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 37;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_2;
+					sload_2;
+					stableswitch L15 1 3 L4 L10 L11;
+				L4:	aload_0;
+					sconst_3;
+					getstatic_a 43;		// reference INWI_STK/ItemText.programmText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L9 0 3 L5 L6 L7 L8;
+				L5:	aload_0;
+					sconst_3;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 37;
+					sconst_3;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L15;
+				L6:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 208;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L15;
+				L7:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 216;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L15;
+				L8:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 225;
+					sconst_5;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L9:	goto L15;
+				L10:	aload_0;
+					bspush 80;
+					invokestatic 33;		// INWI_STK/INWI_STK.thirdItemIntermediateHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L15;
+				L11:	aload_0;
+					sconst_2;
+					getstatic_a 44;		// reference INWI_STK/ItemText.citationText
+					sconst_0;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					bspush 42;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L15 0 2 L12 L13 L14;
+				L12:	aload_0;
+					sconst_3;
+					getstatic_a 41;		// reference INWI_STK/ItemText.divertissementText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 37;
+					sconst_3;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L15;
+				L13:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 230;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L15;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 230;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L15:	return;
+		}
+
+		.method private static meteoMenuHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sconst_0;
+					sstore_2;
+					sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 52;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_3;
+					sload_3;
+					stableswitch L45 0 8 L4 L5 L10 L15 L20 L25 L30 L35 L40;
+				L4:	aload_0;
+					invokestatic 47;		// INWI_STK/INWI_STK.forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L5:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L7;
+				L6:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 238;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L7:	sload_2;
+					ifne L9;
+				L8:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 238;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L10:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 7;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L12;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 246;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L12:	sload_2;
+					ifne L14;
+				L13:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 246;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L15:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 18;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L17;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 255;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L17:	sload_2;
+					ifne L19;
+				L18:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L19:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 255;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L20:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 22;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L22;
+				L21:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 263;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L22:	sload_2;
+					ifne L24;
+				L23:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L24:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 263;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L25:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 31;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L27;
+				L26:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 272;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L27:	sload_2;
+					ifne L29;
+				L28:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L29:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 272;
+					bspush 10;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L30:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 41;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L32;
+				L31:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 282;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L32:	sload_2;
+					ifne L34;
+				L33:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L45;
+				L34:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 282;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L45;
+				L35:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 47;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L37;
+				L36:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 290;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L45;
+				L37:	sload_2;
+					ifne L39;
+				L38:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L45;
+				L39:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 290;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L45;
+				L40:	aload_0;
+					sconst_2;
+					getstatic_a 48;		// reference INWI_STK/ItemText.agadirText
+					sconst_0;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					bspush 53;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					sstore_2;
+					sconst_1;
+					sload_2;
+					if_scmpne L42;
+				L41:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_0;
+					sconst_2;
+					sspush 299;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L45;
+				L42:	sload_2;
+					ifne L44;
+				L43:	aload_0;
+					bspush 8;
+					getstatic_a 45;		// reference INWI_STK/ItemText.meteoText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					bspush 40;
+					bspush 7;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto L45;
+				L44:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 299;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L45:	return;
+		}
+
+		.method private static pharmaciesItemHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					sconst_2;
+					getstatic_a 49;		// reference INWI_STK/ItemText.pharmaciesText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_2;
+					sload_2;
+					stableswitch L28 0 2 L4 L5 L18;
+				L4:	aload_0;
+					invokestatic 47;		// INWI_STK/INWI_STK.forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L5:	aload_0;
+					bspush 10;
+					getstatic_a 50;		// reference INWI_STK/ItemText.casablancaText
+					sconst_0;
+					getstatic_a 49;		// reference INWI_STK/ItemText.pharmaciesText
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L17 0 10 L6 L7 L8 L9 L10 L11 L12 L13 L14 L15 L16;
+				L6:	aload_0;
+					sconst_2;
+					getstatic_a 49;		// reference INWI_STK/ItemText.pharmaciesText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					sconst_0;
+					bspush 6;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L28;
+				L7:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 307;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L8:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 315;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 323;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L10:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 331;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 339;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L12:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 347;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L13:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 355;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 363;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L15:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 372;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 381;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L17:	goto_w L28;
+				L18:	aload_0;
+					bspush 8;
+					getstatic_a 51;		// reference INWI_STK/ItemText.rabatText
+					sconst_0;
+					getstatic_a 49;		// reference INWI_STK/ItemText.pharmaciesText
+					bspush 11;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L28 0 8 L19 L20 L21 L22 L23 L24 L25 L26 L27;
+				L19:	aload_0;
+					sconst_2;
+					getstatic_a 49;		// reference INWI_STK/ItemText.pharmaciesText
+					sconst_0;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					sconst_0;
+					bspush 6;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L28;
+				L20:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 390;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L28;
+				L21:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 398;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L22:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 406;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L23:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 414;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L24:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 422;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L25:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 430;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L26:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 438;
+					bspush 8;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L28;
+				L27:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 446;
+					bspush 9;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L28:	return;
+		}
+
+		.method private static trainItemHandling(Luicc/toolkit/ProactiveHandler;B)V {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	sload_1;
+					bspush 80;
+					if_scmpne L2;
+				L1:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					goto L3;
+				L2:	sload_1;
+				L3:	sstore_2;
+					sload_2;
+					stableswitch L134 0 10 L4 L5 L18 L31 L44 L57 L70 L83 L96 L109 L122;
+				L4:	aload_0;
+					invokestatic 47;		// INWI_STK/INWI_STK.forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L5:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L17 0 10 L6 L7 L8 L9 L10 L11 L12 L13 L14 L15 L16;
+				L6:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L7:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 455;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L8:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 480;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L9:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 510;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L10:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 535;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L11:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 554;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L12:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 577;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L13:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 602;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L14:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 624;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L15:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2773;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L16:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					getstatic_a 55;		// reference INWI_STK/ItemText.tangerCasaport
+					sconst_0;
+					getstatic_a 55;		// reference INWI_STK/ItemText.tangerCasaport
+					arraylength;
+					aload_0;
+					invokestatic 23;		// INWI_STK/INWI_STK.sendSMSArray([BSB[BSSLuicc/toolkit/ProactiveHandler;)V
+				L17:	goto_w L134;
+				L18:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L30 0 10 L19 L20 L21 L22 L23 L24 L25 L26 L27 L28 L29;
+				L19:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L20:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 704;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L21:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 734;
+					bspush 35;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L22:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 769;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L23:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 799;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L24:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 823;
+					bspush 28;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L25:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 851;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L26:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 881;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L27:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 908;
+					bspush 26;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L28:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 934;
+					bspush 32;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L29:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 966;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L30:	goto_w L134;
+				L31:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L43 0 10 L32 L33 L34 L35 L36 L37 L38 L39 L40 L41 L42;
+				L32:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L33:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 993;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L34:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1018;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L35:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1048;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L36:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1073;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L37:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1097;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L38:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1120;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L39:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1145;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L40:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1167;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L41:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1188;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L42:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1215;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L43:	goto_w L134;
+				L44:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L56 0 10 L45 L46 L47 L48 L49 L50 L51 L52 L53 L54 L55;
+				L45:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L46:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1237;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L47:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1256;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L48:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1280;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L49:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1299;
+					bspush 13;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L50:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1312;
+					bspush 17;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L51:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1329;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L52:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1348;
+					bspush 16;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L53:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1364;
+					bspush 15;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L54:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1379;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L55:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1400;
+					bspush 16;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L56:	goto_w L134;
+				L57:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L69 0 10 L58 L59 L60 L61 L62 L63 L64 L65 L66 L67 L68;
+				L58:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L59:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1416;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L60:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1439;
+					bspush 28;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L61:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1467;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L62:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1490;
+					bspush 17;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L63:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1507;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L64:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1528;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L65:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1551;
+					bspush 20;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L66:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1571;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L67:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1590;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L68:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1615;
+					bspush 20;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L69:	goto_w L134;
+				L70:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L82 0 10 L71 L72 L73 L74 L75 L76 L77 L78 L79 L80 L81;
+				L71:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L72:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1635;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L73:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1660;
+					bspush 30;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L74:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1690;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L75:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1715;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L76:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1734;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L77:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1757;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L78:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1782;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L79:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1804;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L80:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1825;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L81:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1852;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L82:	goto_w L134;
+				L83:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L95 0 10 L84 L85 L86 L87 L88 L89 L90 L91 L92 L93 L94;
+				L84:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L85:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1874;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L86:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1896;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L87:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1923;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L88:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1945;
+					bspush 16;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L89:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1961;
+					bspush 20;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L90:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 1981;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L91:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2003;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L92:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2022;
+					bspush 18;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L93:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2040;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L94:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2064;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L95:	goto_w L134;
+				L96:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L108 0 10 L97 L98 L99 L100 L101 L102 L103 L104 L105 L106 L107;
+				L97:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L98:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2083;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L99:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2104;
+					bspush 26;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L100:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2130;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L101:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2151;
+					bspush 15;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L102:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2166;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L103:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2185;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L104:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2206;
+					bspush 18;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L105:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2224;
+					bspush 17;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L106:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2241;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L107:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2264;
+					bspush 18;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L108:	goto_w L134;
+				L109:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L121 0 10 L110 L111 L112 L113 L114 L115 L116 L117 L118 L119 L120;
+				L110:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L111:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2282;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L112:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2309;
+					bspush 32;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L113:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2341;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L114:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2368;
+					bspush 21;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L115:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2389;
+					bspush 25;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L116:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2414;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L117:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2441;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L118:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2465;
+					bspush 23;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L119:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2488;
+					bspush 29;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L120:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2517;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L121:	goto_w L134;
+				L122:	aload_0;
+					bspush 10;
+					getstatic_a 54;		// reference INWI_STK/ItemText.casaPortText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					bspush 24;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L134 0 10 L123 L124 L125 L126 L127 L128 L129 L130 L131 L132 L133;
+				L123:	aload_0;
+					bspush 10;
+					getstatic_a 52;		// reference INWI_STK/ItemText.trainsText
+					sconst_0;
+					getstatic_a 53;		// reference INWI_STK/ItemText.alphaIds
+					sconst_0;
+					sconst_5;
+					invokestatic 26;		// INWI_STK/INWI_STK.sendItem(Luicc/toolkit/ProactiveHandler;B[BS[BSB)V
+					goto_w L134;
+				L124:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2541;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L125:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2563;
+					bspush 27;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L126:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2590;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto_w L134;
+				L127:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2612;
+					bspush 16;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L128:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2628;
+					bspush 20;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L129:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2648;
+					bspush 22;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L130:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2670;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L131:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2689;
+					bspush 18;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L132:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2707;
+					bspush 24;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+					goto L134;
+				L133:	aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					sspush 2731;
+					bspush 19;
+					aload_0;
+					invokestatic 29;		// INWI_STK/INWI_STK.sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V
+				L134:	return;
+		}
+
+		.method private static forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V {
+			.stack 8;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					sconst_4;
+					getstatic_a 46;		// reference INWI_STK/ItemText.pratiqueText
+					sconst_0;
+					getstatic_a 11;		// reference INWI_STK/ItemText.mainMenuText
+					bspush 52;
+					invokestatic 16;		// INWI_STK/INWI_STK.generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B
+					stableswitch L6 1 4 L1 L2 L3 L5;
+				L1:	aload_0;
+					bspush 80;
+					invokestatic 35;		// INWI_STK/INWI_STK.pharmaciesItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L6;
+				L2:	aload_0;
+					bspush 80;
+					invokestatic 34;		// INWI_STK/INWI_STK.trainItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+					goto L6;
+				L3:	aload_0;
+					sconst_1;
+					sconst_4;
+					getstatic_a 56;		// reference INWI_STK/ItemText.newsMessage
+					sspush 2750;
+					bspush 23;
+					sconst_1;
+					bspush 15;
+					invokeinterface 8 18 27;		// uicc/toolkit/ProactiveHandler
+					aload_0;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					ifne L6;
+				L4:	invokestatic 19;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+					bspush 13;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_4;
+					invokeinterface 4 20 8;		// uicc/toolkit/ViewHandler
+					sstore_1;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_0;
+					bspush 83;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_1;
+					bspush 65;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_2;
+					bspush 76;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_3;
+					bspush 65;
+					bastore;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_4;
+					bspush 84;
+					bastore;
+					aload_0;
+					invokestatic 28;		// INWI_STK/INWI_STK.sendDisplayText(Luicc/toolkit/ProactiveHandler;)V
+					getstatic_a 22;		// reference INWI_STK/ItemText.smsNumbers
+					sconst_2;
+					sconst_2;
+					getstatic_a 5;		// reference INWI_STK/INWI_STK.tmpDataArray
+					sconst_0;
+					sload_1;
+					aload_0;
+					invokestatic 23;		// INWI_STK/INWI_STK.sendSMSArray([BSB[BSSLuicc/toolkit/ProactiveHandler;)V
+					goto L6;
+				L5:	aload_0;
+					bspush 80;
+					invokestatic 36;		// INWI_STK/INWI_STK.meteoMenuHandling(Luicc/toolkit/ProactiveHandler;B)V
+				L6:	return;
+		}
+
+		.method public processToolkit(S)V 9 {
+			.stack 6;
+			.locals 3;
+
+				L0:	invokestatic 57;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+					astore_2;
+					sload_1;
+					bspush 7;
+					if_scmpne_w L13;
+				L1:	invokestatic 58;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_3;
+					aload_2;
+					invokeinterface 1 59 15;		// uicc/toolkit/EnvelopeHandler
+					sstore 4;
+					sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_0;
+					baload;
+					if_scmpne L3;
+				L2:	aload_3;
+					invokestatic 60;		// INWI_STK/INWI_STK.firstMenuItem(Luicc/toolkit/ProactiveHandler;)V
+				L3:	sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_1;
+					baload;
+					if_scmpne L5;
+				L4:	aload_3;
+					bspush 80;
+					invokestatic 30;		// INWI_STK/INWI_STK.secondItemHandling(Luicc/toolkit/ProactiveHandler;B)V
+				L5:	sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_2;
+					baload;
+					if_scmpne L7;
+				L6:	aload_3;
+					bspush 80;
+					invokestatic 32;		// INWI_STK/INWI_STK.thirdMenuHandling(Luicc/toolkit/ProactiveHandler;B)V
+				L7:	sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_3;
+					baload;
+					if_scmpne L9;
+				L8:	aload_3;
+					invokestatic 47;		// INWI_STK/INWI_STK.forthMenuHanding(Luicc/toolkit/ProactiveHandler;)V
+				L9:	sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_4;
+					baload;
+					if_scmpne L11;
+				L10:	aload_3;
+					bspush -127;
+					bspush 8;
+					getstatic_a 61;		// reference INWI_STK/INWI_STK.dtItemText
+					sconst_0;
+					bspush 124;
+					invokeinterface 6 18 25;		// uicc/toolkit/ProactiveHandler
+					aload_3;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+				L11:	sload 4;
+					getstatic_a 2;		// reference INWI_STK/INWI_STK.menuIndex
+					sconst_5;
+					baload;
+					if_scmpne L13;
+				L12:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					bspush 6;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					bspush -111;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					bspush 18;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush 82;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_4;
+					bspush -110;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_5;
+					sconst_0;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					bspush 6;
+					bspush 32;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					bspush 7;
+					sconst_2;
+					bastore;
+					aload_3;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					baload;
+					invokestatic 17;		// INWI_STK/INWI_STK.sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V
+				L13:	return;
+		}
+
+		.method private static sendsetUpCallCommand(Luicc/toolkit/ProactiveHandler;S)V {
+			.stack 6;
+			.locals 0;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					bspush 16;
+					sconst_0;
+					bspush -125;
+					invokeinterface 4 18 23;		// uicc/toolkit/ProactiveHandler
+					aload_0;
+					bspush 6;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					sload_1;
+					sconst_1;
+					sadd;
+					invokeinterface 5 62 15;		// uicc/toolkit/EditHandler
+					aload_0;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					return;
+		}
+
+		.method private static sendDisplayText(Luicc/toolkit/ProactiveHandler;)V {
+			.stack 6;
+			.locals 0;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					bspush -127;
+					sconst_4;
+					getstatic_a 63;		// reference INWI_STK/INWI_STK.confirmDt
+					sconst_0;
+					getstatic_a 63;		// reference INWI_STK/INWI_STK.confirmDt
+					arraylength;
+					invokeinterface 6 18 25;		// uicc/toolkit/ProactiveHandler
+					aload_0;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					putstatic_b 64;		// byte INWI_STK/INWI_STK.generalResult
+					return;
+		}
+
+		.method private static sendSMS([BSBSSLuicc/toolkit/ProactiveHandler;)V {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	getstatic_b 64;		// byte INWI_STK/INWI_STK.generalResult
+					bspush 17;
+					if_scmpne L2;
+				L1:	return;
+				L2:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sconst_1;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					sconst_1;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					aload_0;
+					sload_1;
+					sload_2;
+					sadd;
+					sconst_1;
+					ssub;
+					baload;
+					sspush 240;
+					sand;
+					sspush 240;
+					if_scmpne L4;
+				L3:	sload_2;
+					sconst_2;
+					smul;
+					sconst_1;
+					ssub;
+					goto L5;
+				L4:	sload_2;
+					sconst_2;
+					smul;
+				L5:	s2b;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush -127;
+					bastore;
+					aload_0;
+					sload_1;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_4;
+					sload_2;
+					invokestatic 65;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					sstore 6;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 6;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 6;
+					sconst_0;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 6;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 6;
+					sconst_4;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 6;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 6;
+					sload 4;
+					s2b;
+					bastore;
+					getstatic_a 56;		// reference INWI_STK/ItemText.newsMessage
+					sload_3;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 6;
+					sload 4;
+					invokestatic 65;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					sstore 7;
+					aload 5;
+					bspush 19;
+					sconst_0;
+					bspush -125;
+					invokeinterface 4 18 23;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					bspush 11;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sload 7;
+					invokeinterface 5 62 15;		// uicc/toolkit/EditHandler
+					aload 5;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L6:	aload 5;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L7:	aload 5;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L8:	aload 5;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L9:	return;
+				L10:	return;
+		}
+
+		.method private static sendSMSArray([BSB[BSSLuicc/toolkit/ProactiveHandler;)V {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	getstatic_b 64;		// byte INWI_STK/INWI_STK.generalResult
+					bspush 17;
+					if_scmpne L2;
+				L1:	return;
+				L2:	getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sconst_1;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_1;
+					sconst_1;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_2;
+					aload_0;
+					sload_1;
+					sload_2;
+					sadd;
+					sconst_1;
+					ssub;
+					baload;
+					sspush 240;
+					sand;
+					sspush 240;
+					if_scmpne L4;
+				L3:	sload_2;
+					sconst_2;
+					smul;
+					sconst_1;
+					ssub;
+					goto L5;
+				L4:	sload_2;
+					sconst_2;
+					smul;
+				L5:	s2b;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_3;
+					bspush -127;
+					bastore;
+					aload_0;
+					sload_1;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_4;
+					sload_2;
+					invokestatic 65;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					sstore 7;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sconst_0;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sconst_4;
+					bastore;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 7;
+					dup;
+					sconst_1;
+					sadd;
+					sstore 7;
+					sload 5;
+					s2b;
+					bastore;
+					aload_3;
+					sload 4;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sload 7;
+					sload 5;
+					invokestatic 65;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					sstore 8;
+					aload 6;
+					bspush 19;
+					sconst_0;
+					bspush -125;
+					invokeinterface 4 18 23;		// uicc/toolkit/ProactiveHandler
+					aload 6;
+					bspush 11;
+					getstatic_a 4;		// reference INWI_STK/INWI_STK.tempArray
+					sconst_0;
+					sload 8;
+					invokeinterface 5 62 15;		// uicc/toolkit/EditHandler
+					aload 6;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L6:	aload 6;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L7:	aload 6;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L8:	aload 6;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					bspush 32;
+					if_scmpne L10;
+				L9:	return;
+				L10:	return;
+		}
+
+		.method private static generateSelectItem(Luicc/toolkit/ProactiveHandler;B[BS[BS)B {
+			.stack 7;
+			.locals 1;
+
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+				L0:	aload_0;
+					bspush 36;
+					sconst_0;
+					bspush -126;
+					invokeinterface 4 18 23;		// uicc/toolkit/ProactiveHandler
+					aload_0;
+					sconst_5;
+					aload 4;
+					sload 5;
+					sconst_1;
+					sadd;
+					aload 4;
+					sload 5;
+					baload;
+					invokeinterface 5 62 15;		// uicc/toolkit/EditHandler
+					sconst_1;
+					sstore 6;
+					goto L2;
+				L1:	aload_0;
+					bspush -113;
+					sload 6;
+					aload_2;
+					sload_3;
+					sconst_1;
+					sadd;
+					aload_2;
+					sload_3;
+					baload;
+					sspush 255;
+					sand;
+					invokeinterface 6 62 21;		// uicc/toolkit/EditHandler
+					sload_3;
+					aload_2;
+					sload_3;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_3;
+					sload 6;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 6;
+				L2:	sload 6;
+					sload_1;
+					if_scmple L1;
+				L3:	bspush 17;
+					aload_0;
+					invokeinterface 1 18 24;		// uicc/toolkit/ProactiveHandler
+					if_scmpne L5;
+				L4:	sconst_0;
+					sreturn;
+				L5:	invokestatic 19;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+					invokeinterface 1 66 16;		// uicc/toolkit/ProactiveResponseHandler
+					sreturn;
+		}
+
+		.method public getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable; 5 {
+			.stack 2;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/AID;	0.6;
+			.descriptor	Ljavacard/framework/Shareable;	0.2;
+
+				L0:	sload_2;
+					sconst_1;
+					if_scmpne L3;
+				L1:	aload_1;
+					ifnonnull L3;
+				L2:	aload_0;
+					areturn;
+				L3:	aconst_null;
+					areturn;
+		}
+
+		.method public uninstall()V 10 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public ItemText 1 extends 2.0 {		// extends java/lang/Object
+
+		.fields {
+			public static byte[] mainMenuText 0 = {16,83,101,114,118,105,99,101,115,32,77,111,98,105,108,101,115,19,-128,0,65,0,99,0,116,0,117,0,97,0,108,0,105,0,116,0,-23,14,68,105,118,101,114,116,105,115,115,101,109,101,110,116,8,80,114,97,116,105,113,117,101,16,80,108,117,115,32,100,101,32,115,101,114,118,105,99,101,115,14,83,101,114,118,105,99,101,32,67,108,105,101,110,116};		// [B
+			public static byte[] serviceMobile 1 = {15,77,97,32,98,111,105,116,101,32,118,111,99,97,108,101,8,83,101,109,109,101,51,110,105,13,66,101,100,100,101,108,32,83,97,119,116,101,107,51,-128,0,77,0,101,0,115,0,32,0,112,0,97,0,114,0,97,0,109,0,-24,0,116,0,114,0,101,0,115,0,32,0,77,0,117,0,108,0,116,0,105,0,109,0,-23,0,100,0,105,0,97};		// [B
+			public static byte[] actualiteText 2 = {5,73,110,102,111,115,5,83,112,111,114,116,8,70,111,111,116,98,97,108,108,7,77,117,115,105,113,117,101,10,65,99,116,117,32,83,116,97,114,115};		// [B
+			public static byte[] divertissementText 3 = {31,-128,0,80,0,114,0,111,0,103,0,114,0,97,0,109,0,109,0,101,0,115,0,32,0,67,0,105,0,110,0,-23,9,72,111,114,111,115,99,111,112,101,8,67,105,116,97,116,105,111,110};		// [B
+			public static byte[] alphaIds 4 = {23,-128,0,71,0,97,0,114,0,101,0,32,0,100,0,-23,0,112,0,97,0,114,0,116,16,71,97,114,101,32,100,101,115,116,105,110,97,116,105,111,110};		// [B
+			public static byte[] pratiqueText 5 = {10,80,104,97,114,109,97,99,105,101,115,6,84,114,97,105,110,115,33,-128,0,72,0,111,0,114,0,97,0,105,0,114,0,101,0,115,0,32,0,80,0,114,0,105,0,-24,0,114,0,101,0,115,11,-128,0,77,0,-23,0,116,0,-23,0,111};		// [B
+			public static byte[] infosText 6 = {5,77,97,114,111,99,13,73,110,116,101,114,110,97,116,105,111,110,97,108,15,-128,0,71,0,-23,0,110,0,-23,0,114,0,97,0,108};		// [B
+			public static byte[] sportsText 7 = {21,83,111,117,115,99,114,105,114,101,32,97,117,120,32,97,108,101,114,116,101,115,14,73,110,102,111,32,100,117,32,109,111,109,101,110,116};		// [B
+			public static byte[] footballText 8 = {19,-128,0,82,0,-23,0,115,0,117,0,108,0,116,0,97,0,116,0,115,10,67,108,97,115,115,101,109,101,110,116,21,83,111,117,115,99,114,105,114,101,32,97,117,120,32,97,108,101,114,116,101,115};		// [B
+			public static byte[] programmText 9 = {39,-128,0,77,0,-23,0,103,0,97,0,114,0,97,0,109,0,97,0,32,0,67,0,97,0,115,0,97,0,98,0,108,0,97,0,110,0,99,0,97,37,-128,0,77,0,-23,0,103,0,97,0,114,0,97,0,109,0,97,0,32,0,77,0,97,0,114,0,114,0,97,0,107,0,101,0,99,0,104,15,73,109,97,120,32,67,97,115,97,98,108,97,110,99,97};		// [B
+			public static byte[] horoscopeText 10 = {13,-128,0,66,0,-23,0,108,0,105,0,101,0,114,7,84,97,117,114,101,97,117,15,-128,0,71,0,-23,0,109,0,101,0,97,0,117,0,120,6,67,97,110,99,101,114,4,76,105,111,110,6,86,105,101,114,103,101,7,66,97,108,97,110,99,101,8,83,99,111,114,112,105,111,110,10,83,97,103,105,116,116,97,105,114,101,10,67,97,112,114,105,99,111,114,110,101,7,86,101,114,115,101,97,117,8,80,111,105,115,115,111,110,115};		// [B
+			public static byte[] citationText 11 = {21,83,111,117,115,99,114,105,114,101,32,97,117,120,32,97,108,101,114,116,101,115,16,67,105,116,97,116,105,111,110,32,100,117,32,106,111,117,114};		// [B
+			public static byte[] pharmaciesText 12 = {10,67,97,115,97,98,108,97,110,99,97,5,82,97,98,97,116};		// [B
+			public static byte[] trainsText 13 = {9,67,97,115,97,32,80,111,114,116,14,67,97,115,97,32,86,111,121,97,103,101,117,114,115,9,69,108,32,74,97,100,105,100,97,3,70,101,115,7,75,101,110,105,116,114,97,9,77,97,114,114,97,107,101,99,104,6,77,101,107,110,101,115,5,79,117,106,100,97,11,82,97,98,97,116,32,86,105,108,108,101,6,84,97,110,103,101,114};		// [B
+			public static byte[] meteoText 14 = {6,65,103,97,100,105,114,10,67,97,115,97,98,108,97,110,99,97,3,70,101,115,8,76,97,97,121,111,117,110,101,9,77,97,114,114,97,107,101,99,104,5,79,117,106,100,97,5,82,97,98,97,116,6,84,97,110,103,101,114};		// [B
+			public static byte[] resultsText 15 = {9,66,111,116,111,108,97,32,68,49,9,66,111,116,111,108,97,32,68,50,7,76,97,32,76,105,103,97,14,80,114,101,109,105,101,114,32,108,101,97,103,117,101,6,67,97,108,99,105,111,7,76,105,103,117,101,32,49};		// [B
+			public static byte[] belierText 16 = {21,83,111,117,115,99,114,105,114,101,32,97,117,120,32,97,108,101,114,116,101,115,17,72,111,114,111,115,99,111,112,101,32,100,117,32,106,111,117,114};		// [B
+			public static byte[] casablancaText 17 = {9,65,105,110,32,67,104,111,99,107,8,65,105,110,32,83,98,97,97,13,82,111,99,104,101,115,32,78,111,105,114,101,115,8,66,101,110,32,77,115,105,107,6,77,97,97,114,105,102,7,69,108,32,70,105,100,97,11,72,97,121,32,72,97,115,115,97,110,105,14,83,105,100,105,32,66,101,114,110,111,117,115,115,105,12,83,105,100,105,32,79,116,104,109,97,110,101,12,83,105,100,105,32,77,97,97,114,111,117,102};		// [B
+			public static byte[] rabatText 18 = {5,65,103,100,97,108,21,65,107,107,97,114,105,45,79,99,101,97,110,45,79,114,97,110,103,101,114,115,15,69,108,32,71,117,105,99,104,32,79,117,100,97,121,97,12,67,101,110,116,114,101,32,86,105,108,108,101,8,72,97,121,32,82,105,97,100,6,77,101,100,105,110,97,15,89,97,97,99,111,117,98,32,77,97,110,115,111,117,114,8,84,97,107,97,100,111,117,109};		// [B
+			public static byte[] casaPortText 19 = {9,67,97,115,97,32,80,111,114,116,14,67,97,115,97,32,86,111,121,97,103,101,117,114,115,9,69,108,32,74,97,100,105,100,97,3,70,101,115,7,75,101,110,105,116,114,97,9,77,97,114,114,97,107,101,99,104,6,77,101,107,110,101,115,5,79,117,106,100,97,11,82,97,98,97,116,32,86,105,108,108,101,6,84,97,110,103,101,114};		// [B
+			public static byte[] tangerCasaport 20 = {84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,84,97,110,103,101,114};		// [B
+			public static byte[] agadirText 21 = {21,83,111,117,115,99,114,105,114,101,32,97,117,120,32,97,108,101,114,116,101,115,27,-128,0,77,0,-23,0,116,0,-23,0,111,0,32,0,100,0,117,0,32,0,106,0,111,0,117,0,114};		// [B
+			public static byte[] newsMessage 22 = {78,69,87,83,77,65,82,79,67,78,69,87,83,73,78,84,69,82,83,80,79,82,84,82,69,83,71,78,70,49,82,69,83,71,78,70,50,82,69,83,69,83,80,82,69,83,65,78,71,82,69,83,73,84,82,69,83,70,82,67,76,65,83,83,71,78,70,49,67,76,65,83,83,71,78,70,50,67,76,65,83,83,69,83,80,67,76,65,83,83,65,78,71,67,76,65,83,83,73,84,67,76,65,83,83,70,82,70,79,79,84,77,117,115,105,99,80,69,79,80,76,69,66,101,108,105,101,114,84,97,117,114,101,97,117,71,101,109,101,97,117,120,67,97,110,99,101,114,76,105,111,110,86,105,101,114,103,101,66,97,108,97,110,99,101,83,99,111,114,112,105,111,110,83,97,103,105,116,116,97,105,114,101,67,97,112,114,105,99,111,114,110,101,86,101,114,115,101,97,117,80,111,105,115,115,111,110,115,67,65,83,65,77,69,71,65,77,65,82,82,65,77,69,71,65,117,105,109,97,120,67,73,84,65,84,73,79,78,77,69,84,69,79,65,71,65,77,69,84,69,79,67,65,83,65,77,69,84,69,79,70,69,83,77,69,84,69,79,76,65,65,89,77,69,84,69,79,77,65,82,82,65,77,69,84,69,79,79,85,74,77,69,84,69,79,82,65,66,65,77,69,84,69,79,84,65,78,80,72,65,67,65,83,65,49,80,72,65,67,65,83,65,50,80,72,65,67,65,83,65,51,80,72,65,67,65,83,65,52,80,72,65,67,65,83,65,53,80,72,65,67,65,83,65,54,80,72,65,67,65,83,65,55,80,72,65,67,65,83,65,49,48,80,72,65,67,65,83,65,49,49,80,72,65,67,65,83,65,49,50,80,72,65,82,65,66,65,49,80,72,65,82,65,66,65,52,80,72,65,82,65,66,65,53,80,72,65,82,65,66,65,54,80,72,65,82,65,66,65,55,80,72,65,82,65,66,65,56,80,72,65,82,65,66,65,57,80,72,65,82,65,66,65,49,50,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,70,101,115,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,75,101,110,105,116,114,97,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,77,101,107,110,101,115,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,79,117,106,100,97,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,84,97,110,103,101,114,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,70,101,115,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,75,101,110,105,116,114,97,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,77,101,107,110,101,115,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,79,117,106,100,97,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,32,84,97,110,103,101,114,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,69,108,32,106,97,100,105,100,97,32,70,101,115,115,32,70,101,115,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,75,101,110,105,116,114,97,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,77,101,107,110,101,115,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,79,117,106,100,97,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,69,108,32,74,97,100,105,100,97,32,84,97,110,103,101,114,84,82,65,73,78,32,70,101,115,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,70,101,115,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,70,101,115,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,70,101,115,32,70,101,115,84,82,65,73,78,32,70,101,115,32,75,101,110,105,116,114,97,84,82,65,73,78,32,70,101,115,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,70,101,115,32,77,101,107,110,101,115,84,82,65,73,78,32,70,101,115,32,79,117,106,100,97,84,82,65,73,78,32,70,101,115,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,70,101,115,32,84,97,110,103,101,114,84,82,65,73,78,32,75,101,110,105,116,114,97,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,75,101,110,105,116,114,97,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,75,101,110,105,116,114,97,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,75,101,110,105,116,114,97,32,70,101,115,84,82,65,73,78,32,75,101,110,105,116,114,97,32,75,101,110,105,116,114,97,84,82,65,73,78,32,75,101,110,105,116,114,97,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,75,101,110,105,116,114,97,32,77,101,107,110,101,115,84,82,65,73,78,32,75,101,110,105,116,114,97,32,79,117,106,100,97,84,82,65,73,78,32,75,101,110,105,116,114,97,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,75,101,110,105,116,114,97,32,84,97,110,103,101,114,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,70,101,115,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,75,101,110,105,116,114,97,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,77,101,107,110,101,115,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,79,117,106,100,97,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,77,97,114,114,97,107,101,99,104,32,84,97,110,103,101,114,84,82,65,73,78,32,77,101,107,110,101,115,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,77,101,107,110,101,115,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,77,101,107,110,101,115,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,77,101,107,110,101,115,32,70,101,115,84,82,65,73,78,32,77,101,107,110,101,115,32,75,101,110,105,116,114,97,84,82,65,73,78,32,77,101,107,110,101,115,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,77,101,107,110,101,115,32,77,101,107,110,101,115,84,82,65,73,78,32,77,101,107,110,101,115,32,79,117,106,100,97,84,82,65,73,78,32,77,101,107,110,101,115,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,77,101,107,110,101,115,32,84,97,110,103,101,114,84,82,65,73,78,32,79,117,106,100,97,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,79,117,106,100,97,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,79,117,106,100,97,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,79,117,106,100,97,32,70,101,115,84,82,65,73,78,32,79,117,106,100,97,32,75,101,110,105,116,114,97,84,82,65,73,78,32,79,117,106,100,97,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,79,117,106,100,97,32,77,101,107,110,101,115,84,82,65,73,78,32,79,117,106,100,97,32,79,117,106,100,97,84,82,65,73,78,32,79,117,106,100,97,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,79,117,106,100,97,32,84,97,110,103,101,114,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,70,101,115,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,75,101,110,105,116,114,97,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,77,101,107,110,101,115,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,79,117,106,100,97,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,82,97,98,97,116,32,86,105,108,108,101,32,84,97,110,103,101,114,84,82,65,73,78,32,84,97,110,103,101,114,32,67,97,115,97,32,80,111,114,116,84,82,65,73,78,32,84,97,110,103,101,114,32,67,97,115,97,32,86,111,121,97,103,101,117,114,115,84,82,65,73,78,32,84,97,110,103,101,114,32,69,108,32,74,97,100,105,100,97,84,82,65,73,78,32,84,97,110,103,101,114,32,70,101,115,84,82,65,73,78,32,84,97,110,103,101,114,32,75,101,110,105,116,114,97,84,82,65,73,78,32,84,97,110,103,101,114,32,77,97,114,114,97,107,101,99,104,84,82,65,73,78,32,84,97,110,103,101,114,32,77,101,107,110,101,115,84,82,65,73,78,32,84,97,110,103,101,114,32,79,117,106,100,97,84,82,65,73,78,32,84,97,110,103,101,114,32,82,97,98,97,116,32,86,105,108,108,101,84,82,65,73,78,32,84,97,110,103,101,114,32,84,97,110,103,101,114,83,97,105,115,105,115,115,101,122,32,118,111,116,114,101,32,118,105,108,108,101,32,58,84,82,65,73,78,32,67,97,115,97,32,80,111,114,116,32,82,97,98,97,116,32,86,105,108,108,101};		// [B
+			public static byte[] smsNumbers 23 = {119,-9,39,-12,9,-16,120,-9};		// [B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 67;		// java/lang/Object.<init>()V
+					return;
+		}
+
+	}
+
+}

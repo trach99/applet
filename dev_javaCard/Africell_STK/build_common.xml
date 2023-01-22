@@ -1,0 +1,65 @@
+<project name="CommonTaskDefs">
+	<property file="build.properties"/>
+	<taskdef classname="com.lsc.ant.taskdefs.AddLoggerTask" classpath="${lsctask.path}" name="addDebugger">
+    </taskdef>
+	
+	<taskdef classname="com.lsc.ant.taskdefs.ApduSender" classpath="${lsctask.path}" name="apdusender"/>
+	
+
+	
+
+	<target name="displayproperties">
+		<!--
+		<echoproperties destfile="build.properties"/>
+		-->
+		<echo message="srcFolder">${srcFolder}</echo>
+	</target>
+	
+	
+	<property location="${basedir}/src" name="originalSrc"/>
+	<property location="${versionFolder}" name="ver.fld"/>
+	<property location="${logFolder}" name="log.fld"/>
+	
+	 <fail message="version folder has same path of src">
+	     <condition>
+	             <equals arg1="${versionFolder}" arg2="${originalSrc}"/>
+	     </condition>
+	</fail>
+	
+	<fail message="log folder has same path of src">
+		 <condition>
+		         <equals arg1="${logFolder}" arg2="${originalSrc}"/>
+		  </condition>
+	</fail>
+	
+	
+	<!-- ================================= 
+	          target: initLoggerFld              
+	         ================================= -->
+    <target depends="" description="initialize for logger" name="initLoggerFld">
+        <condition else="${srcFolder}" property="src.files" value="${versionFolder}">
+        	<istrue value="${preprocess}"/>
+        </condition>
+    	
+    	<echo message="src.files=${src.files}"/>   	
+    	
+    	<delete dir="${logFolder}"/>
+    	<delete dir="${basedir}/xmlFiles"/>
+    	
+    	<mkdir dir="${logFolder}"/>
+    	<mkdir dir="${basedir}/xmlFiles"/>	
+    	    	
+    	<copy todir="${logFolder}">  
+    	        <fileset dir="${src.files}" includes="**"/>  
+    	 </copy>  	
+    	
+    </target>
+  <path description="Sets the classpath to Java Card API and tools" id="jc_jars">
+    <pathelement path="C:/LogosJavaCardDevEnv/javaCardLibraries/javaCardKit/java_card_kit-2_2_1/lib/api.jar"/>
+    <pathelement path="C:/LogosJavaCardDevEnv/javaCardLibraries/toolkitLib/lib/simclasses.jar"/>
+  </path>
+	
+	
+
+	
+</project>
